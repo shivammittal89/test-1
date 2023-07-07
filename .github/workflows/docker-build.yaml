@@ -76,6 +76,7 @@ jobs:
           command: cves
           image: ${{ steps.meta.outputs.tags }}
           sarif-file: sarif.output.json
+          pull-requests: write
           summary: true
       
       - name: Upload SARIF result
@@ -95,4 +96,5 @@ jobs:
           only-severities: critical,high
           to-stream: prod
           exit-code: true
+          pull-requests: write
           summary: true
